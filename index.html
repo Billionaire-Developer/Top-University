@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TopUniverse-code-challenge</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <form onsubmit="sendEmail(); reset(); return false;" >
+            <h3>Get in touch</h3>
+            <p>we'd love to hear from you, please fill out this form</p>
+            First Name: <input type="text" placeholder="First Name">
+            Last Name: <input type="text" placeholder="Last Name"><br>
+            Email id: <input type="email" placeholder="Email address" required>
+            <textarea rows="20" cols="40" placeholder="What is on your mind?"></textarea><br>
+            <input type="checkbox" placeholder="check">You agree to our friendly<a href="privacypolicy.com">privacy policy</a>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <!--used stmpjs DNS to link it to an existing email address-->
+
+    <script src=" https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail(){
+               Email.send({
+                    Host : "smtp.gmail.com",
+                    Username : "Jherhemyah",
+                    Password : "Jherhekheyz12",
+                    To : 'lawanijeremiah23@gmail.com',
+                    From : document.getElementById("Email").value,
+                    Subject : "New contact form enquiry",
+                    Body : "And this is the body"
+                }).then(
+                message => alert(message)
+                );
+        }
+    </script>
+</body>
+</html>
